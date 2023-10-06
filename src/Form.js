@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import  "./form.css";
-function Form({toast, firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumber , cardNumber, setYear}){
+function Form({ firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumber , cardNumber, setYear}){
     const [error,setError]=useState(false)
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        error && toast("card Added")  
+        
         if(firstName.length==0||cardNumber.length==0||cvvNum.length==0){
             setError(true)
         }
