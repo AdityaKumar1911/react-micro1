@@ -1,0 +1,55 @@
+/* div{
+    padding: 8px;
+} */
+input{
+    height: 44px;
+    width:382px;
+    border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+/* button{
+    height: 30px;
+    width: 20%;
+} */
+#error{
+    color: red;
+}
+#submit{
+    color: white;
+    width:382px;
+    height: 44px;
+    border: none;
+  outline: none;
+  background-color: 
+  #220930;
+  /* padding-top: 20px; */
+}
+.subbtn{
+    padding-top: 20px;
+}
+#dateid{
+    width: 
+    78px;
+    margin-right: 20px;
+}
+#datemm{
+    width: 
+    78px;
+    margin-right: 20px;
+}
+.alldate-cvv{
+    display: flex;
+}
+#datCVC{
+    width: 
+    189px;
+}
