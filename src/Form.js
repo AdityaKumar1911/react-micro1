@@ -13,6 +13,12 @@ function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumbe
         console.log("First Name: ",firstName,"\nLast Name: ",cardNumber)
         }
     }
+    const handleChange = (e) => {
+        const inputValue = e.target.value;
+        const numericValue = inputValue.replace(/\D/g, '');
+        const formatted = numericValue.replace(/(\d{4})/g, '$1 ');
+        setCardNumber(formatted);
+      };
     return(
         <>
            <form onSubmit={handleSubmit}>
@@ -27,7 +33,7 @@ function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumbe
                <div className="card-number">
                <div>
                <label htmlFor="">CARD NUMBER</label> <br />
-                   <input placeholder="e.g. 1234 5678 9123 0000"  onChange={e=>setCardNumber(e.target.value)} />
+                   <input placeholder="e.g. 1234 5678 9123 0000"  onChange={(e)=>{handleChange(e)}} />
                    
                </div>
                {error&&cardNumber.length <= 0?
