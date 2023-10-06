@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import  "./form.css";
-function Form(){
-    const [firstName,setFirstName]=useState('')
-    const [lastName,setLastName]=useState('')
-    const [cvvNum,setCvvNum]=useState('')
+function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumber , cardNumber, setYear}){
     const [error,setError]=useState(false)
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        if(firstName.length==0||lastName.length==0||cvvNum.length==0){
+        if(firstName.length==0||cardNumber.length==0||cvvNum.length==0){
             setError(true)
         }
-        if(firstName&&lastName&&cvvNum)
+        if(firstName&&cardNumber&&cvvNum)
         {
-        console.log("First Name: ",firstName,"\nLast Name: ",lastName)
+        console.log("First Name: ",firstName,"\nLast Name: ",cardNumber)
         }
     }
     return(
@@ -30,10 +27,10 @@ function Form(){
                <div className="card-number">
                <div>
                <label htmlFor="">CARD NUMBER</label> <br />
-                   <input placeholder="e.g. 1234 5678 9123 0000" type="number" onChange={e=>setLastName(e.target.value)} />
+                   <input placeholder="e.g. 1234 5678 9123 0000"  onChange={e=>setCardNumber(e.target.value)} />
                    
                </div>
-               {error&&lastName.length<=0?
+               {error&&cardNumber.length <= 0?
                <label id="error">Last Name can't be Empty</label>:""}
                <div>
                </div>
@@ -43,11 +40,11 @@ function Form(){
               <div className="date-cvv">
                <div id="space">
                <label htmlFor="">EXP.DATE (MM/YY)</label> <br />
-                   <input id="dateid" placeholder="MM" type="number" onChange={e=>setLastName(e.target.value)} />
-                   <input id="datemm" placeholder="MM" type="number" onChange={e=>setLastName(e.target.value)} />
+                   <input id="dateid" placeholder="MM" type="number" onChange={e=>setMonth(e.target.value)} />
+                   <input id="datemm" placeholder="MM" type="number" onChange={e=>setYear(e.target.value)} />
                    
                </div>
-               {/* {error&&lastName.length<=0?
+               {/* {error&&cardNumber.length<=0?
                <label id="error">Last Name can't be Empty</label>:""} */}
                <div>
                </div>

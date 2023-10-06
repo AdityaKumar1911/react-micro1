@@ -3,11 +3,16 @@ import "./App.css";
 import Form from './Form';
 
 function App() {
+  const [firstName,setFirstName]=useState('')
+  const [month,setMonth]=useState('')
+  const [year,setYear]=useState('')
+  const [cvvNum,setCvvNum]=useState('')
+  const [cardNumber, setCardNumber]=useState('')
   // const  [inputValue, setInputValue] =  useState('');
-
 	// const  handleChange = (event) => {
 	// 	setInputValue(event.target.value);
 	// };
+
   return (
     <div className="contenar">
       <div className="cardes">
@@ -16,17 +21,17 @@ function App() {
             <div className="sercal1"></div>
             <div className="sercal2"></div>
           </div>
-          <div className="cardnumber">0000 0000 0000 0000</div>
+          <div className="cardnumber">{cardNumber ? cardNumber : "0000 0000 0000 0000"}</div>
           <div className="nameanddate">
-            <div className="cardholdername">Aditya Kumar </div>
-            <div className="date">00/00</div>
+            <div className="cardholdername">{!firstName ? "Aditya Kumar" : firstName }</div>
+            <div className="date">{!month ? "00/00" : month}{year && "/" + year} </div>
           </div>
         </div>
         <div className="card2">
           <div className="blackborder"></div>
           <div className="cvvborder">
             <div className="cvv">
-              <p>000</p>
+              <p>{cvvNum ? cvvNum : "000"}</p>
             </div>
           </div>
           <div className="linestyle">
@@ -52,7 +57,7 @@ function App() {
         </div>
       </div>
       <div className="formes">
-        <Form/>
+        <Form firstName={firstName} setFirstName={setFirstName} setMonth={setMonth} setCvvNum={setCvvNum} cvvNum={cvvNum} setCardNumber={setCardNumber} cardNumber={cardNumber} setYear={setYear}/>
        {/* <div className="allform">
        <form>
         <label>
