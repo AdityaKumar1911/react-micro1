@@ -16,14 +16,14 @@
     justify-content: space-evenly;
 }
 .cardes {
-  padding-top: 80px;
+  padding-top: 135px;
 }
 .card1 {
   background-color: #9747ff;
   height: 215px;
   width: 382px;
   /* border: 5px solid black; */
-  margin-left: 14%;
+  /* margin-left: 14%; */
   padding-top: 20px;
   border-radius: 10px;
   margin-bottom: 40px;
@@ -90,7 +90,7 @@ text-align: left;
   height: 215px;
   width: 382px;
   /* border: 5px solid black; */
-  margin-left: 19%;
+  margin-left: 14%;
   padding-top: 20px;
   border-radius: 10px;
   /* padding-left: 30px; */
@@ -241,4 +241,9 @@ text-align: left;
   left: 203px;
   border-radius: 4px;
   background-color: #adb6bf;
+}
+
+.formes{
+  display: flex;
+    align-items: center;
 }

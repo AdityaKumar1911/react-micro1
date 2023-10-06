@@ -18,7 +18,9 @@ function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumbe
            <form onSubmit={handleSubmit}>
                <div className="cardholder">
                <div>
-                <label htmlFor="">CARDHOLDER NAME</label><br />
+                <div className="names">
+                <label  htmlFor="">CARDHOLDER NAME</label>
+                </div>
                    <input placeholder="e.g. Jane Appleseed" onChange={e=>setFirstName(e.target.value)} /> <br /> 
                </div>
                {error&&firstName.length<=0?
@@ -26,8 +28,10 @@ function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumbe
                </div>
                <div className="card-number">
                <div>
-               <label htmlFor="">CARD NUMBER</label> <br />
-                   <input placeholder="e.g. 1234 5678 9123 0000"  onChange={e=>setCardNumber(e.target.value)} />
+               <div className="names">
+               <label htmlFor="">CARD NUMBER</label> 
+               </div>
+                   <input type="number" placeholder="e.g. 1234 5678 9123 0000"  onChange={e=>setCardNumber(e.target.value)} />
                    
                </div>
                {error&&cardNumber.length <= 0?
@@ -39,9 +43,11 @@ function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumbe
               <div className="alldate-cvv">
               <div className="date-cvv">
                <div id="space">
-               <label htmlFor="">EXP.DATE (MM/YY)</label> <br />
+                <div className="names">
+                <label htmlFor="">EXP.DATE (MM/YY)</label>
+                </div>
                    <input id="dateid" placeholder="MM" type="number" onChange={e=>setMonth(e.target.value)} />
-                   <input id="datemm" placeholder="MM" type="number" onChange={e=>setYear(e.target.value)} />
+                   <input id="datemm" placeholder="YY" type="number" onChange={e=>setYear(e.target.value)} />
                    
                </div>
                {/* {error&&cardNumber.length<=0?
@@ -51,8 +57,10 @@ function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumbe
                </div>
                <div className="date-cvv">
                <div>
-               <label htmlFor="">CVC</label> <br />
-                   <input id="datCVC" placeholder="MM" type="number" onChange={e=>setCvvNum(e.target.value)} />
+               <div className="names">
+               <label htmlFor="">CVC</label> 
+               </div>
+                   <input id="datCVC" placeholder="e.g. 123" type="number" onChange={e=>setCvvNum(e.target.value)} />
                    
                </div>
                {error&&cvvNum.length<=0?
@@ -63,7 +71,7 @@ function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumbe
               </div>
                <div className="subbtn">
                    <button id="submit">
-                       Submit
+                   Confirm
                    </button>
                    </div>
            </form>

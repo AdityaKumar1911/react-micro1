@@ -7,6 +7,9 @@ input{
     border: none;
   outline: none;
   border-radius: 10px;
+  color: 
+  #BBB9BC;
+  padding-left: 10px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -25,16 +28,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #submit{
     color: white;
-    width:382px;
+    width:392px;
     height: 44px;
     border: none;
   outline: none;
   background-color: 
   #220930;
+  cursor: pointer;
   /* padding-top: 20px; */
 }
 .subbtn{
     padding-top: 20px;
+    width: 63px;
+    height: 16px;
 }
 #dateid{
     width: 
@@ -51,5 +57,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #datCVC{
     width: 
-    189px;
+    167px;
+}
+.cardholder{
+    padding-bottom: 30px;
+}
+.card-number{
+    padding-bottom: 30px;
+}
+.names{
+    padding-bottom: 5px;
+    color: #404040;
 }

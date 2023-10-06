@@ -23,7 +23,7 @@ function App() {
           </div>
           <div className="cardnumber">{cardNumber ? cardNumber : "0000 0000 0000 0000"}</div>
           <div className="nameanddate">
-            <div className="cardholdername">{!firstName ? "Aditya Kumar" : firstName }</div>
+            <div className="cardholdername">{!firstName ? "JANE APPLESEED" : firstName }</div>
             <div className="date">{!month ? "00/00" : month}{year && "/" + year} </div>
           </div>
         </div>
