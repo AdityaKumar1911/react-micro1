@@ -35,6 +35,7 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: 
   #220930;
   cursor: pointer;
+  border-radius: 10px;
   /* padding-top: 20px; */
 }
 .subbtn{

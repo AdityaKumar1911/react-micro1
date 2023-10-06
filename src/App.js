@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import Form from './Form';
+import {toast} from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 
 function App() {
   const [firstName,setFirstName]=useState('')
@@ -57,7 +60,7 @@ function App() {
         </div>
       </div>
       <div className="formes">
-        <Form firstName={firstName} setFirstName={setFirstName} setMonth={setMonth} setCvvNum={setCvvNum} cvvNum={cvvNum} setCardNumber={setCardNumber} cardNumber={cardNumber} setYear={setYear}/>
+        <Form toast={toast} firstName={firstName} setFirstName={setFirstName} setMonth={setMonth} setCvvNum={setCvvNum} cvvNum={cvvNum} setCardNumber={setCardNumber} cardNumber={cardNumber} setYear={setYear}/>
        {/* <div className="allform">
        <form>
         <label>

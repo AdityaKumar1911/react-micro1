@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import  "./form.css";
-function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumber , cardNumber, setYear}){
+function Form({toast, firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumber , cardNumber, setYear}){
     const [error,setError]=useState(false)
 
     const handleSubmit=(e)=>{
         e.preventDefault();
+        error && toast("card Added")  
         if(firstName.length==0||cardNumber.length==0||cvvNum.length==0){
             setError(true)
         }
@@ -13,6 +14,12 @@ function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumbe
         console.log("First Name: ",firstName,"\nLast Name: ",cardNumber)
         }
     }
+    const handleChange = (e) => {
+        const inputValue = e.target.value;
+        const numericValue = inputValue.replace(/\D/g, '');
+        const formatted = numericValue.replace(/(\d{4})/g, '$1 ');
+        setCardNumber(formatted);
+      };
     return(
         <>
            <form onSubmit={handleSubmit}>
@@ -28,10 +35,8 @@ function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumbe
                </div>
                <div className="card-number">
                <div>
-               <div className="names">
-               <label htmlFor="">CARD NUMBER</label> 
-               </div>
-                   <input type="number" placeholder="e.g. 1234 5678 9123 0000"  onChange={e=>setCardNumber(e.target.value)} />
+               <label htmlFor="">CARD NUMBER</label> <br />
+                   <input placeholder="e.g. 1234 5678 9123 0000"  onChange={(e)=>{handleChange(e)}} />
                    
                </div>
                {error&&cardNumber.length <= 0?
@@ -70,8 +75,8 @@ function Form({firstName,setFirstName, setMonth, setCvvNum, cvvNum, setCardNumbe
                </div>
               </div>
                <div className="subbtn">
-                   <button id="submit">
-                   Confirm
+                   <button onClick={() => handleSubmit} id="submit">
+                   Confirm 
                    </button>
                    </div>
            </form>
